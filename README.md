@@ -39,7 +39,13 @@ RemVol Booster is made to be a simple, accessible volume booster without requiri
 
 No complicated setup. Just open, boost, and listen.
 
-## What's new in Version 1.1
+## What's new in Version 1.2
+
+- **Sponsor support** — once in a while the app shows a sponsor page; one tap closes it, and that's what keeps RemVol 100% free
+- **Same feather-light app** — no new permissions, no bloat; sponsor settings update themselves silently in the background
+- **Update notifications** — Version 1.1 users are told in-app that 1.2 is available
+
+### What's new in Version 1.1
 
 - **Settings fixed** — the settings screen no longer closes the app when opened; every option works smoothly now
 - **Cleaner menu** — removed "Ad preferences"; Privacy policy is exactly where your privacy belongs
