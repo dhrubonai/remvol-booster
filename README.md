@@ -39,6 +39,12 @@ RemVol Booster is made to be a simple, accessible volume booster without requiri
 
 No complicated setup. Just open, boost, and listen.
 
+## What's new in Version 1.1
+
+- **Settings fixed** — the settings screen no longer closes the app when opened; every option works smoothly now
+- **Cleaner menu** — removed "Ad preferences"; Privacy policy is exactly where your privacy belongs
+- **Update notifications** — the app now tells you when a new version is available on GitHub, straight from the menu
+
 ## Download
 
 Grab the latest APK directly — no account needed:
