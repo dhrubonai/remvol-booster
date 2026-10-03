@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RemVol Booster — Boost your phone's sound with Rem</title>
+<meta name="description" content="RemVol Booster is a completely free, anime-themed volume booster for Android. Louder sound. Simple controls. Rem by your side.">
+<link rel="icon" type="image/png" href="icon.png">
+<style>
+:root{
+  --bg:#0a0e21; --bg2:#0d1226; --card:#131a36; --card2:#182045;
+  --blue:#5b7cfa; --lav:#a9b7ff; --text:#e8ecff; --muted:#8a93b8;
+  --line:rgba(169,183,255,.14); --danger:#ff6b81;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;line-height:1.6;overflow-x:hidden}
+a{color:var(--lav);text-decoration:none;transition:.2s}
+a:hover{color:#fff}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+
+/* nav */
+nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:rgba(10,14,33,.78);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:17px;color:#fff}
+.brand img{width:34px;height:34px;border-radius:9px}
+.brand b{color:var(--blue)}
+.nav-links{display:flex;gap:26px;font-size:14.5px}
+.nav-links a{color:var(--muted)}
+.nav-links a:hover{color:#fff}
+
+/* hero */
+.hero{position:relative;padding:84px 0 70px;background:
+ radial-gradient(700px 380px at 82% 8%,rgba(91,124,250,.22),transparent 65%),
+ radial-gradient(520px 320px at 8% 90%,rgba(169,183,255,.12),transparent 60%),
+ linear-gradient(180deg,var(--bg2),var(--bg))}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.tagline{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--lav);border:1px solid var(--line);border-radius:999px;padding:7px 14px;margin-bottom:22px;background:rgba(91,124,250,.08)}
+h1{font-size:clamp(38px,5.4vw,58px);line-height:1.08;font-weight:800;letter-spacing:-.02em}
+h1 .grad{background:linear-gradient(92deg,var(--blue) 10%,var(--lav) 90%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{margin:18px 0 30px;color:var(--muted);font-size:17.5px;max-width:46ch}
+.sub b{color:var(--text)}
+.cta-row{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:10px;border-radius:14px;padding:14px 24px;font-weight:700;font-size:15.5px;cursor:pointer;transition:.2s;border:1px solid transparent}
+.btn-primary{background:linear-gradient(94deg,var(--blue),#7d8ffb);color:#fff;box-shadow:0 10px 30px -8px rgba(91,124,250,.55)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 34px -8px rgba(91,124,250,.7);color:#fff}
+.btn-ghost{border-color:var(--line);color:var(--text);background:rgba(255,255,255,.03)}
+.btn-ghost:hover{border-color:var(--lav);color:#fff}
+.dl-note{font-size:12.5px;color:var(--muted);margin-top:14px}
+.poster-card{position:relative;border-radius:24px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px -20px rgba(91,124,250,.35);transform:rotate(1.2deg);transition:.3s}
+.poster-card:hover{transform:rotate(0) scale(1.01)}
+.poster-card img{display:block;width:100%}
+.chips{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
+.chip{font-size:13px;color:var(--lav);background:rgba(91,124,250,.1);border:1px solid var(--line);padding:7px 14px;border-radius:999px}
+
+/* sections */
+section{padding:74px 0}
+.kicker{font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--blue);font-weight:700;margin-bottom:10px}
+h2{font-size:clamp(26px,3.4vw,36px);font-weight:800;letter-spacing:-.01em;margin-bottom:14px}
+.lead{color:var(--muted);max-width:64ch}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;margin-top:38px}
+.feat{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px;transition:.25s}
+.feat:hover{transform:translateY(-4px);border-color:rgba(169,183,255,.35);background:var(--card2)}
+.feat .ico{width:44px;height:44px;border-radius:13px;display:flex;align-items:center;justify-content:center;font-size:21px;background:rgba(91,124,250,.14);border:1px solid var(--line);margin-bottom:14px}
+.feat h3{font-size:16.5px;margin-bottom:7px}
+.feat p{font-size:14px;color:var(--muted)}
+
+.quote{margin-top:44px;text-align:center;font-size:clamp(19px,2.6vw,25px);font-weight:700;color:var(--lav)}
+.quote span{color:#fff}
+
+.warn{margin-top:44px;background:rgba(255,107,129,.07);border:1px solid rgba(255,107,129,.3);border-radius:18px;padding:26px 28px}
+.warn h3{color:var(--danger);font-size:16px;margin-bottom:8px;display:flex;align-items:center;gap:9px}
+.warn p{font-size:14.5px;color:#f3d9dd}
+.warn p b{color:#fff}
+
+.design-band{background:linear-gradient(180deg,var(--bg2),var(--bg));border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:36px;align-items:center}
+.palette{display:flex;gap:12px;margin-top:22px}
+.sw{flex:1;height:64px;border-radius:14px;border:1px solid var(--line);display:flex;align-items:flex-end;padding:8px 10px;font-size:11px;color:rgba(255,255,255,.85)}
+
+.free-band{text-align:center}
+.free-band h2{margin-bottom:10px}
+.free-band p{color:var(--muted);max-width:60ch;margin:0 auto}
+
+footer{border-top:1px solid var(--line);padding:34px 0;background:var(--bg2)}
+.foot{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;font-size:13.5px;color:var(--muted)}
+.foot .links{display:flex;gap:20px}
+
+@media(max-width:860px){
+  .hero-grid,.duo{grid-template-columns:1fr}
+  .hero{padding:56px 0 50px}
+  .nav-links{display:none}
+  .poster-card{transform:none}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-in">
+    <div class="brand"><img src="icon.png" alt="RemVol Booster icon">RemVol <b>Booster</b></div>
+    <div class="nav-links">
+      <a href="#features">Features</a>
+      <a href="#design">Design</a>
+      <a href="#download">Download</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="https://dhrubox.com" target="_blank" rel="noopener">Creator</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="tagline">Free forever &nbsp;•&nbsp; Anime themed &nbsp;•&nbsp; Lightweight</div>
+      <h1>Boost your phone's <span class="grad">sound</span> with Rem.</h1>
+      <p class="sub">RemVol Booster is a <b>completely free-to-use Android volume booster</b> designed to make your phone's audio louder with a simple, lightweight interface. Inspired by <b>Rem from Re:Zero</b>, it combines an anime-themed design with a clean and easy-to-use volume control experience.</p>
+      <div class="cta-row" id="download">
+        <a class="btn btn-primary" href="https://github.com/dhrubonai/remvol-booster/releases/latest/download/RemVol-booster-v1.0.apk" download>
+          &#11015;&#65039; Download — Version 1
+        </a>
+        <a class="btn btn-ghost" href="https://github.com/dhrubonai/remvol-booster/releases" target="_blank" rel="noopener">Releases</a>
+      </div>
+      <p class="dl-note">Free APK • No account needed • Installs like any Android app (allow "install from this source" when asked)</p>
+      <div class="chips">
+        <span class="chip">Louder sound</span>
+        <span class="chip">Simple controls</span>
+        <span class="chip">Rem by your side</span>
+      </div>
+    </div>
+    <div class="poster-card">
+      <img src="remvol-poster.png" alt="RemVol Booster poster — Boost your phone's sound with our app, completely free">
+    </div>
+  </div>
+</header>
+
+<section id="features">
+  <div class="wrap">
+    <div class="kicker">Features</div>
+    <h2>Everything you need. Nothing you don't.</h2>
+    <p class="lead">No complicated setup. Just open, boost, and listen.</p>
+    <div class="grid">
+      <div class="feat"><div class="ico">&#128266;</div><h3>Volume Booster</h3><p>Increase your device's audio beyond the normal volume level.</p></div>
+      <div class="feat"><div class="ico">&#127908;</div><h3>Simple Interface</h3><p>Clean controls with easy-to-use volume and boost sliders.</p></div>
+      <div class="feat"><div class="ico">&#10052;&#65039;</div><h3>Rem Anime Theme</h3><p>A dedicated Rem-inspired visual design, from hero to menu.</p></div>
+      <div class="feat"><div class="ico">&#10024;</div><h3>Lightweight</h3><p>Built to stay simple without unnecessary features.</p></div>
+      <div class="feat"><div class="ico">&#128181;</div><h3>Completely Free</h3><p>No payment required to use the app's core features.</p></div>
+      <div class="feat"><div class="ico">&#127911;</div><h3>Easy Controls</h3><p>Start, adjust, and stop the booster directly from the main screen.</p></div>
+      <div class="feat"><div class="ico">&#9888;&#65039;</div><h3>Safety Warning</h3><p>Includes warnings about potential speaker and hearing damage when using high boost levels.</p></div>
+    </div>
+    <div class="quote">"Louder sound. Simple controls. <span>Rem by your side.</span>"</div>
+  </div>
+</section>
+
+<section id="design" class="design-band">
+  <div class="wrap">
+    <div class="kicker">Design</div>
+    <h2>Soft blue, white &amp; lavender — inspired by Rem</h2>
+    <div class="duo">
+      <div>
+        <p class="lead">RemVol Booster uses a soft blue, white, and lavender visual style inspired by Rem, combined with rounded cards, anime artwork, and minimal audio controls. Every screen — main, menu, settings and exit — is styled to feel calm, clean and a little bit magical.</p>
+        <div class="palette">
+          <div class="sw" style="background:#5b7cfa">Soft blue</div>
+          <div class="sw" style="background:#a9b7ff">Lavender</div>
+          <div class="sw" style="background:#f4f6ff;color:#222748">White</div>
+          <div class="sw" style="background:#222748">Ink</div>
+        </div>
+      </div>
+      <div class="warn" style="margin-top:0">
+        <h3>&#9888;&#65039; Important</h3>
+        <p>Using excessive volume or audio amplification can <b>damage your phone speakers or hearing</b>. Use the booster responsibly and avoid unnecessarily high boost levels.</p>
+        <p style="margin-top:8px"><b>Use at your own risk.</b></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="free-band">
+  <div class="wrap">
+    <div class="kicker">Free Forever</div>
+    <h2>No paywall. No complicated setup.</h2>
+    <p>RemVol Booster is made to be a simple, accessible volume booster without requiring users to pay for basic functionality. Just open, boost, and listen.</p>
+    <div class="cta-row" style="justify-content:center;margin-top:30px">
+      <a class="btn btn-primary" href="https://github.com/dhrubonai/remvol-booster/releases/latest/download/RemVol-booster-v1.0.apk" download>Download RemVol Booster — Version 1</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <div>&copy; 2026 RemVol Booster — a free project by <a href="https://dhrubox.com" target="_blank" rel="noopener"><b>dhrubonai</b></a></div>
+    <div class="links">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="https://dhrubox.com" target="_blank" rel="noopener">Creator's portfolio</a>
+      <a href="https://github.com/dhrubonai/remvol-booster" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
