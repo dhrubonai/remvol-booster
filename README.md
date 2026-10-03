@@ -43,7 +43,7 @@ No complicated setup. Just open, boost, and listen.
 
 Grab the latest APK directly — no account needed:
 
-**[⬇ Download RemVol Booster (Version 1)](https://github.com/dhrubonai/remvol-booster/releases/latest/download/RemVol-booster-v1.0.apk)**
+**[⬇ Download RemVol Booster (free)](https://github.com/dhrubonai/remvol-booster/releases/latest/download/RemVol-booster.apk)**
 
 Or browse all releases [here](https://github.com/dhrubonai/remvol-booster/releases).
 
